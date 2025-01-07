@@ -64,7 +64,7 @@
 }
 
 a {
-  color: #1772d0;
+  color: #3e9eff;
   text-decoration: none;
 }
 
@@ -132,11 +132,4 @@ h2 {
 
 span.highlight {
   background-color: #ffffd0;
-}
-
-.colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
 }
