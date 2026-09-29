@@ -158,6 +158,40 @@
             </tbody>
           </table>
 
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody>
+              <tr>
+                <td>
+                  <h2>Experience</h2>
+                  <p>
+                    <b>Machine Learning Engineer Intern</b>
+                    : TikTok Inc., Trust &amp; Safety Team, San Jose, CA (May &ndash; Aug 2026)
+                    <br>
+                    Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a video model that
+                    re-adjudicates the moderation system's own false positives. The task is asymmetric: recovering a
+                    wrongly flagged video is a gain, while releasing a real violation is an incident, so models were
+                    compared on precision, recall, and false-release rate together.
+                  </p>
+                  <ul style="margin-top:0px;">
+                    <li><b>Data.</b> Curated a million-scale decision-tree chain-of-thought corpus across 70 policies:
+                      selected the labeling LLM for each policy by its policy-specific performance, validated labels with
+                      sampled human review, and generated reasoning traces from the finalized labels.</li>
+                    <li><b>SFT.</b> Fine-tuned a 9B video multimodal LLM on the generated reasoning traces to 80% accuracy,
+                      and compared 20 data-mixture and verdict-weight settings on accuracy, precision, recall, and
+                      false-release rate to choose the starting checkpoints for RL and distillation.</li>
+                    <li><b>RL.</b> Adapted veRL to the proprietary model for 64-frame video inputs, and designed
+                      decision-tree-aligned step-level rewards with asymmetric penalties for GRPO training to improve
+                      reasoning reliability; audited reward, entropy, and response-length dynamics and read rollout
+                      reasoning during training.</li>
+                    <li><b>Distillation.</b> Applied RLSD and OPSD to multimodal video reasoning; on 20% of policies,
+                      precision and recall rose by up to 10 and 18 points over SFT while the false-release rate fell
+                      4 points below the best SFT checkpoint.</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
@@ -195,40 +229,6 @@
             </tbody>
           </table>
 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <h2>Experience</h2>
-                  <p>
-                    <b>Machine Learning Engineer Intern</b>
-                    : TikTok Inc., Trust &amp; Safety Team, San Jose, CA (May &ndash; Aug 2026)
-                    <br>
-                    Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a video model that
-                    re-adjudicates the moderation system's own false positives. The task is asymmetric: recovering a
-                    wrongly flagged video is a gain, while releasing a real violation is an incident, so models were
-                    compared on precision, recall, and false-release rate together.
-                  </p>
-                  <ul style="margin-top:0px;">
-                    <li><b>Data.</b> Curated a million-scale decision-tree chain-of-thought corpus across 70 policies:
-                      selected the labeling LLM for each policy by its policy-specific performance, validated labels with
-                      sampled human review, and generated reasoning traces from the finalized labels.</li>
-                    <li><b>SFT.</b> Fine-tuned a 9B video multimodal LLM on the generated reasoning traces to 80% accuracy,
-                      and compared 20 data-mixture and verdict-weight settings on accuracy, precision, recall, and
-                      false-release rate to choose the starting checkpoints for RL and distillation.</li>
-                    <li><b>RL.</b> Adapted veRL to the proprietary model for 64-frame video inputs, and designed
-                      decision-tree-aligned step-level rewards with asymmetric penalties for GRPO training to improve
-                      reasoning reliability; audited reward, entropy, and response-length dynamics and read rollout
-                      reasoning during training.</li>
-                    <li><b>Distillation.</b> Applied RLSD and OPSD to multimodal video reasoning; on 20% of policies,
-                      precision and recall rose by up to 10 and 18 points over SFT while the false-release rate fell
-                      4 points below the best SFT checkpoint.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
             <tbody>
               <tr>
