@@ -144,14 +144,11 @@
                   /
                   <a href="https://hanyang-zhou.github.io/blog/sopedex" target="_blank">blog</a> -->
                   <p></p>
-                  <p>
-                    AdaRFT is a sample-efficient curriculum for reinforcement finetuning: during PPO/GRPO training it updates a target difficulty
-                    from recent rewards and samples problems near that target, so the model keeps training on problems that are challenging but solvable.
-                    Problem difficulty is estimated offline with pass@128 from Qwen2.5-Math-7B and validated against rubric-based GPT-4o ratings;
-                    this rollout-based difficulty gives greater learning gains than a judge-guided curriculum.
-                    Trained in veRL on DeepScaleR with Qwen2.5-Math-1.5B and Qwen2.5-7B, AdaRFT converges up to 2&times; faster and improves accuracy
-                    by 3&ndash;4 points on competition-level math benchmarks such as MATH-500 and AIME 24.
-                  </p>
+                  <ul style="margin-top:4px;">
+                    <li><b>Method.</b> A curriculum for reinforcement finetuning that updates a target difficulty from recent rewards during PPO/GRPO training and samples problems near that target, keeping training on problems that are challenging but solvable.</li>
+                    <li><b>Difficulty estimation.</b> Problem difficulty is estimated offline with pass@128 from Qwen2.5-Math-7B and validated against rubric-based GPT-4o ratings; the rollout-based difficulty gives greater learning gains than a judge-guided curriculum.</li>
+                    <li><b>Results.</b> Trained in veRL on DeepScaleR with Qwen2.5-Math-1.5B and Qwen2.5-7B, AdaRFT converges up to 2&times; faster and improves accuracy by 3&ndash;4 points on competition-level math benchmarks such as MATH-500 and AIME 24.</li>
+                  </ul>
                 </td>
               </tr>
 
@@ -166,13 +163,12 @@
                   <p>
                     <b>Machine Learning Engineer Intern</b>
                     : TikTok Inc., Trust &amp; Safety Team, San Jose, CA (May &ndash; Aug 2026)
-                    <br>
-                    Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a video model that
-                    re-adjudicates the moderation system's own false positives. The task is asymmetric: recovering a
-                    wrongly flagged video is a gain, while releasing a real violation is an incident, so models were
-                    compared on precision, recall, and false-release rate together.
                   </p>
                   <ul style="margin-top:0px;">
+                    <li><b>Scope.</b> Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a video model that
+                      re-adjudicates the moderation system's own false positives.</li>
+                    <li><b>Objective.</b> Recovering a wrongly flagged video is a gain, while releasing a real violation is an
+                      incident, so models were compared on precision, recall, and false-release rate together.</li>
                     <li><b>Data.</b> Curated a million-scale decision-tree chain-of-thought corpus across 70 policies:
                       selected the labeling LLM for each policy by its policy-specific performance, validated labels with
                       sampled human review, and generated reasoning traces from the finalized labels.</li>
@@ -218,12 +214,12 @@
                     <source src="https://wuwendyy.github.io/coding-agent-trajectory-visualizer/assets/demo/trajectory-visualizer-tour-codex-light.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <p>
-                    A VS Code extension that reconstructs Claude Code and Codex sessions as one trajectory. It finds any past session by time, title,
-                    or project path; links each turn's model calls, tool calls and results, context compaction, and subagent activity; and captures the
-                    exact Claude Code API requests, so the assembled prompt and tool schemas behind every step can be inspected. Sessions stay on the
-                    local machine. I built it to study long-horizon coding-agent behavior, and it is published on the VS Code Marketplace.
-                  </p>
+                  <ul style="margin-top:4px;">
+                    <li><b>Find sessions.</b> Locates any past Claude Code or Codex session by time, title, or project path.</li>
+                    <li><b>Reconstruct the trajectory.</b> Links each turn's model calls, tool calls and results, context compaction, and subagent activity into one view.</li>
+                    <li><b>Inspect the request.</b> Captures the exact Claude Code API requests, so the assembled prompt and tool schemas behind every step can be read.</li>
+                    <li><b>Local and published.</b> Sessions stay on the local machine; the extension is published on the VS Code Marketplace.</li>
+                  </ul>
                 </td>
               </tr>
             </tbody>
