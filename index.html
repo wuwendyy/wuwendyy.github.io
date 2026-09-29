@@ -144,7 +144,7 @@
                   <a href="https://hanyang-zhou.github.io/blog/sopedex" target="_blank">blog</a> -->
                   <p></p>
                   <ul style="margin-top:4px;">
-                    <li><b>Method.</b> A curriculum for reinforcement finetuning that updates a target difficulty from recent rewards during PPO/GRPO training and samples problems near that target, keeping training on problems that are challenging but solvable.</li>
+                    <li><b>Method.</b> An algorithm-agnostic curriculum for reinforcement finetuning, demonstrated with PPO and GRPO, that updates a target difficulty from recent rewards and samples problems near that target, keeping training on problems that are challenging but solvable.</li>
                     <li><b>Difficulty estimation.</b> Problem difficulty is estimated offline with pass@128 from Qwen2.5-Math-7B and validated against rubric-based GPT-4o ratings; pass@128-based difficulty gives greater learning gains than LLM-as-a-judge-based difficulty estimation.</li>
                     <li><b>Results.</b> Trained in veRL on DeepScaleR with Qwen2.5-Math-1.5B and Qwen2.5-7B, AdaRFT converges up to 2&times; faster and improves accuracy by 3&ndash;4 points on competition-level math benchmarks such as MATH-500 and AIME 24.</li>
                   </ul>
