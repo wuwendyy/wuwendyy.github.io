@@ -73,7 +73,7 @@
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Research</h2>
+                  <h2>Publications</h2>
                   <p>
                     
                     <!-- My research interest lies in developing advanced robot policy and skill learning techniques, particularly for complex manipulation tasks like dexterous manipulation. 
@@ -125,6 +125,8 @@
                   <a href="https://tianyizhou.github.io/" target="_blank" style="color: black;">Tianyi Zhou</a>,
                   <a href="https://jyzhao.net/index.html" target="_blank" style="color: black;">Jieyu Zhao</a>
                   <br>
+                  <em>Transactions on Machine Learning Research</em> (<strong>TMLR</strong>)
+                  <br>
 <!--                   <br>
                   <em>International Symposium of Robotics Research</em> (<strong>ISRR</strong>), 2024
                   <br> -->
@@ -143,12 +145,54 @@
                   <a href="https://hanyang-zhou.github.io/blog/sopedex" target="_blank">blog</a> -->
                   <p></p>
                   <p>
-                    This paper presents AdaRFT, a lightweight extension to reinforcement finetuning that adaptively adjusts task difficulty based on reward signals, 
-                    reducing training steps by up to 2× while boosting reasoning accuracy on competition-level math benchmarks.
+                    AdaRFT is a sample-efficient curriculum for reinforcement finetuning: during PPO/GRPO training it updates a target difficulty
+                    from recent rewards and samples problems near that target, so the model keeps training on problems that are challenging but solvable.
+                    Problem difficulty is estimated offline with pass@128 from Qwen2.5-Math-7B and validated against rubric-based GPT-4o ratings;
+                    this rollout-based difficulty gives greater learning gains than a judge-guided curriculum.
+                    Trained in veRL on DeepScaleR with Qwen2.5-Math-1.5B and Qwen2.5-7B, AdaRFT converges up to 2&times; faster and improves accuracy
+                    by 3&ndash;4 points on competition-level math benchmarks such as MATH-500 and AIME 24.
                   </p>
                 </td>
               </tr>
 
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px 20px 0px 20px;width:100%;vertical-align:middle">
+                  <h2>Projects</h2>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
+                  <a href="https://marketplace.visualstudio.com/items?itemName=yiyang-wu.trajectory-visualizer" target="_blank">
+                    <span class="papertitle">Coding Agent Trajectory Visualizer</span>
+                  </a>
+                  (VS Code extension)
+                  <br>
+                  <a href="https://marketplace.visualstudio.com/items?itemName=yiyang-wu.trajectory-visualizer" target="_blank">VS Code Marketplace</a>
+                  /
+                  <a href="https://wuwendyy.github.io/coding-agent-trajectory-visualizer/" target="_blank">project page</a>
+                  /
+                  <a href="https://github.com/wuwendyy/coding-agent-trajectory-visualizer/blob/main/usage-guide.md" target="_blank">usage guide</a>
+                  <p></p>
+                  <video style="width:100%;border-radius:8px;border:1px solid #ddd;" controls muted autoplay loop playsinline preload="metadata"
+                         poster="https://wuwendyy.github.io/coding-agent-trajectory-visualizer/assets/shots/views-overview-light.png">
+                    <source src="https://wuwendyy.github.io/coding-agent-trajectory-visualizer/assets/demo/trajectory-visualizer-tour-light.webm" type="video/webm">
+                    <source src="https://wuwendyy.github.io/coding-agent-trajectory-visualizer/assets/demo/trajectory-visualizer-tour-light.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <p>
+                    A VS Code extension that reconstructs Claude Code and Codex sessions as one trajectory. It finds any past session by time, title,
+                    or project path; links each turn's model calls, tool calls and results, context compaction, and subagent activity; and captures the
+                    exact Claude Code API requests, so the assembled prompt and tool schemas behind every step can be inspected. Sessions stay on the
+                    local machine. I built it to study long-horizon coding-agent behavior, and it is published on the VS Code Marketplace.
+                  </p>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -161,10 +205,26 @@
                     <b>Machine Learning Engineer Intern</b>
                     : TikTok Inc., Trust &amp; Safety Team, San Jose, CA (May &ndash; Aug 2026)
                     <br>
-                    Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a model that
-                    moderates video and re-adjudicates the moderation system's own false positives.
-                    <br>
+                    Owned the post-training loop (data, SFT, RL, self-distillation, eval) for a video model that
+                    re-adjudicates the moderation system's own false positives. The task is asymmetric: recovering a
+                    wrongly flagged video is a gain, while releasing a real violation is an incident, so models were
+                    compared on precision, recall, and false-release rate together.
                   </p>
+                  <ul style="margin-top:0px;">
+                    <li><b>Data.</b> Curated a million-scale decision-tree chain-of-thought corpus across 70 policies:
+                      selected the labeling LLM for each policy by its policy-specific performance, validated labels with
+                      sampled human review, and generated reasoning traces from the finalized labels.</li>
+                    <li><b>SFT.</b> Fine-tuned a 9B video multimodal LLM on the generated reasoning traces to 80% accuracy,
+                      and compared 20 data-mixture and verdict-weight settings on accuracy, precision, recall, and
+                      false-release rate to choose the starting checkpoints for RL and distillation.</li>
+                    <li><b>RL.</b> Adapted veRL to the proprietary model for 64-frame video inputs, and designed
+                      decision-tree-aligned step-level rewards with asymmetric penalties for GRPO training to improve
+                      reasoning reliability; audited reward, entropy, and response-length dynamics and read rollout
+                      reasoning during training.</li>
+                    <li><b>Distillation.</b> Applied RLSD and OPSD to multimodal video reasoning; on 20% of policies,
+                      precision and recall rose by up to 10 and 18 points over SFT while the false-release rate fell
+                      4 points below the best SFT checkpoint.</li>
+                  </ul>
                 </td>
               </tr>
             </tbody>
